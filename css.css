@@ -1,0 +1,530 @@
+.calculate{
+    background: rgb(196, 196, 196);
+    width: 30%;
+    height: 600px;
+    margin: 25px auto;
+    position: relative;
+    border-radius: 25px;
+}
+.screen, .screen input{
+    position: relative;
+    top: 60px;
+    max-width: 40%;
+    max-height: 150px;
+    font-size: 2em;
+    background: #ddd;
+    margin: 35px auto;
+    display: flex;
+    justify-content: center;
+    padding: 25px 50px;
+    text-align: right;
+    border-radius: 20px;
+    box-shadow: 0px 0px 5px 5px rgba(177, 177, 177, 0.694);
+}
+.buttons{
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: center;
+    position: relative;
+    top: 50px;
+    margin: 50px 0;
+    padding: 10px auto;
+    max-width: 100%;
+}
+.buttons button{
+    font-size: 2em;
+    border-radius: 25px;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 25px;
+    background: #ddd;
+    box-shadow: 0px 0px 5px 5px rgba(145, 145, 145, 0.544);
+    transition: all .1s ease-in-out;
+}
+.buttons button:active{
+    background: rgb(157, 157, 157);
+    box-shadow: inset 0px 0px 5px 5px rgba(95, 95, 95, 0.544);
+    outline: 1px solid black;
+}
+
+.border{
+    border: 1px solid black;
+}
+.btn-top{
+    position: fixed;
+    right: 100px; bottom: 100px;
+    z-index: 99;
+    display: none;
+    padding: 15px 40px;
+    background-color: green;
+    color: #fff;
+    border-radius: 10px;
+    border: 2px solid rgba(100, 148, 237, 0);
+    outline: none;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.4em;
+}
+.btn-top:hover{
+    background-color: rgb(0, 90, 0);
+    /* opacity: .8; */
+    border: 2px solid black;
+}
+
+.skillbar{
+    text-align: center;
+    position: relative;
+    display: block;
+    margin-bottom: 15px;
+    width: 97%;
+    height: 35px;
+    border-radius: 3px;
+    transition: .4s linear;
+    transition-property: width, background-color;
+    background: rgb(241, 241, 241);
+    margin: 20px;
+}
+.skillbar-title{
+    position: absolute;
+    top: 0;left: 0;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fff;
+    background: #6adcfa;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.skillbar-title span{
+    display: block;
+    background: rgba(0,0,0,0.1);
+    padding: 0 20px;
+    height: 35px;
+    line-height: 35px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.skillbar-bar{
+    height: 35px;
+    width: 0;
+    background: #6adcfa;
+    border-radius: 3px;
+}
+.skillbar-bar-percent{
+    position: absolute;
+    right: 10px;
+    top: 0;font-size: 11px;
+    height: 35px;
+    line-height: 35px;
+    color: #444;
+    color: rgba(0,0,0,0.5);
+}
+
+.accordion-main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.accordion{
+
+    list-style: none;
+    border-top: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    margin: 0.5rem 0 1rem 0;
+    padding-left: 0;
+    width: 50%;
+}
+.accordion-header{
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    cursor: pointer;
+    min-height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+}
+.accordion-header::after{
+    content: '\02795';
+    font-size: 0.6rem;
+    float: right;
+    color: #000;
+    transition: transform 0.3s ease-in-out;
+}
+.accordion-header.active::after{
+    transform: rotate(10, 10);
+    content: '\02796';
+}
+.accordion-body{
+    display: none;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
+    background-color: rgb(246, 246, 246);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+:root{
+    --index: calc(1vw + 1vh);
+}
+.content{
+    font-size: calc(var(--index) * 1.5);
+}
+body{
+    margin: 0;
+    padding: 0;
+}
+body .scroll-lock{
+    overflow: hidden;
+}
+.blockC{
+    width: 700px;
+    margin: 0 auto;
+    background-color: #000;
+
+}
+.blockC img{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+
+}
+#bidJPG{
+    margin: 100px auto;
+    padding: 35px;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 25px;
+    display: flex;
+    justify-content: center;
+}
+.button{
+    font-size: 30px;
+
+    padding:5px 20px ;
+    margin: 20% 45%;
+    border-radius: 10px;
+    cursor: pointer;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+/* Всплытие и погружение */
+.block{
+    width: 500px;
+    background-color: green;
+    font-size: 30px;
+    margin: 50px 0;
+}
+.block_inner{
+    width: 300px;
+    background-color: rgb(85, 128, 0);font-size: 30px;
+}
+.block_inner-inner{
+    width: 150px;
+    background-color: rgb(0, 128, 98);font-size: 30px;
+}
+
+
+.buttonF{
+    font-size: 20px;
+    padding:5px 20px ;
+    margin: 50px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.but{
+    font-size: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border: 3px black solid;
+    padding: 20px;
+    margin: 20px;
+    cursor:pointer;
+}
+.but.active{
+    font-size: 20px;
+    border: 3px rgb(255, 0, 0) solid;
+    padding: 20px;
+    margin: 20px;
+    cursor:pointer;
+    box-shadow: 0px 0px 10px 50px black;
+}
+header{
+    font-size: 50px;
+    margin: 100px;
+}
+header:active{
+    background-color: red;
+}
+header::selection{
+    background-color: blueviolet;
+}
+a:focus{
+    margin: 0 auto;
+}
+
+
+.div{
+    width: 100px;
+    height: 100px;
+    background-color: rgb(37, 35, 35);
+    margin:  10px 200px;
+    animation: izi 5s infinite 0s  linear;
+}
+@keyframes izi {
+    0%{
+        margin: 10px 200px;
+    }
+    50%{
+        transform: scale(2);
+        border-radius: 50px;
+        background-color: rgb(120, 120, 120);
+    }
+    100%{
+        margin: 10px 200px ;
+    }
+}
+
+
+h2{
+    width: 100%;
+    margin: 100px auto 20px;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    cursor:pointer;
+    
+}
+h2::after{
+    content: "";
+    display: block;
+    margin: 0 auto;
+    width: 0%;
+    height: 2px;
+    background-color: #000000;
+    transition: 1s ease-in-out;
+    
+
+}
+h2:hover::after{ width: 100%;}
+
+.opp{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.imgPants {
+    width: 300px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 20px;
+    background-color: green;
+}
+.opp p{
+    opacity: 0;
+    font-size: 30px;
+}
+.opp p.active{
+    opacity: 1;
+    font-size: 30px;
+}
+
+#changeButton{
+    margin:  10px 40%;
+    font-size: 50px;
+    padding: 25px;
+    cursor: pointer;
+    background-color: rgb(253,253,25);
+}
+
+
+.mouse-parallax{
+    position: relative;
+    display: flex; align-items: center; justify-content: center;
+    height: 100vh; width: 100%;
+    overflow: hidden;
+    margin-right: 100px;
+}
+.mouse-parallax__content{
+    font-size: 50px; color: #000000;
+    overflow: hidden;
+    margin-right: 100px;
+}
+.mouse-parallax__bg{
+    position: absolute;
+    z-index: -1;
+    width: 130%; height: 130%;
+    background-image: url(../MyBizSec/img/SecondHandClothes1Cap.jpg); background-position: center center; background-size: cover;
+    margin-right: 200px;
+    overflow: hidden;
+}
+
+
+.element-big{
+    width: 100%;
+    height: 1000px;
+
+}
+.element-animation{
+    margin: 2rem 0;
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 10px;
+    opacity: 0;
+    transform: translate(-100px, 0 );
+    transition: all 1s ease-in-out;
+}
+.element-animation.element-show{
+    opacity: 1;
+    transform: translate(0, 0);
+    
+}
+
+.menu {
+    display: flex;
+    width: 100%;
+    background: orange;
+    position: relative;
+}
+.menu a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    padding: 0 10px;   
+    height: 40px; 
+    transition: all .3s ease-in-out;
+    background: orange;
+    
+}
+.menu a:hover{
+    background: rgba(255, 177, 32, 0.476);
+}
+.menu ul{
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    display: none;
+    padding: 0;
+    
+}
+.menu .lili{
+    list-style: none;
+    color: #000;
+    position: relative;
+    left: 10%;
+    top: 0%;
+    
+}
+.menu .lili:hover ul{
+    position: absolute;
+    top: 100%;
+    left: 30%;
+    display: block;
+    border-radius: 5px;
+    color: black;
+}
+.ssubmenuu li{
+    list-style: none;
+    position: relative;
+    top: 0;
+    left: 10%;
+}
+
+
+
+
+/* TODO */
+.main-todo-app{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.todo-app{
+    margin: 0 auto;
+    width: 50%;
+    background: rgb(0, 59, 96);
+    border-radius: 25px;
+    padding: 30px;
+    
+}
+.todoList{
+    background: rgb(0, 52, 84);
+    list-style: none;
+    border-radius: 25px;
+    padding: 30px;
+    margin: 10px auto;
+    position: relative;
+}
+.todoList li{
+    margin: 10px auto;
+    transition: transform .3s ease;
+    position: relative;
+}
+.todoList li.active{
+    background-color: rgba(167, 167, 167, 0.489);
+    border-radius: 10px;
+    color: rgb(69, 69, 69);
+}
+.todoList li.active::before{
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: rgb(0, 0, 0);
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+}
+.todoList li:hover{
+    transform: scale(1.01);
+}
+.todoList li::after{
+    content: '';
+    display: block;
+    margin-top: 5px;
+    height: 1px;
+    width: 100%;
+    background: rgb(0, 0, 0);
+}
+.todoForm{
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+}
+.todoForm input{
+    border: 1px solid #ddd;
+    box-shadow: 5px 5px 5px 2px rgba(179, 179, 179, 0.177);
+    outline: none;
+    font-size: 1.2em;
+    background: rgba(0, 0, 0, 0);
+    color: #fff;
+    border-radius: 10px;
+    padding: 5px 25px;
+    width: 70%;
+    caret-color: greenyellow;
+    transition: transform .3s ease;
+}
+.todoForm input:focus{
+    transform: scale(1.03);
+}
+.todoForm button{
+    font-size: 1.2em;
+    border-radius: 10px;
+    padding: 0px 25px;
+    border: none;
+    width: 20%;
+    transition: transform .3s ease;
+    
+}
+.todoForm button:hover{
+    transform: scale(1.01);
+}
+.todoForm button:active{
+    transform: scale(1.03);
+}
